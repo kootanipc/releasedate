@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h1>発売日一覧</h1>
+    <%= link_to "全て表示", releases_path %>
+    <%= link_to "未発売のみ表示", releases_path %>
+    <%= link_to "発売済のみ表示", releases_path %>
+    <%= link_to "商品を追加", new_release_path, class:"pull-right", class: 'btn btn-default'  %>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th class="grid-th-width1 pc-only">No</th>
+        <th class="grid-th-width2">アイテム</th>
+        <th class="grid-th-width3">発売日</th>
+        <th class="grid-th-width4">発売済フラグ</th>
+        <th class="grid-th-width5">編集</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @releases.each do |release| %>
+        <tr style="height:48px;">
+          <td class="pc-only"><%= @grid_no.to_s %></td>
+          <td style="vertical-align: middle"><%= release.name %></td>
+          <td style="vertical-align: middle"><%= release.date %></td>
+          <td style="vertical-align: middle"><%= released_flg(release) %></td>
+          <td class="henshu-cell">
+            <%= link_to "詳細", release_path(release.id), class: 'btn btn-default btn-sm' %>
+            <%= link_to "編集", edit_release_path(release.id), class: 'btn btn-default btn-sm btn-success' %>
+            <%= link_to "削除", release_path(release.id), method: :delete, data: { confirm: '本当に削除して良いですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+          </td>
+        </tr>
+        <% @grid_no = @grid_no + 1 %>
+      <% end %>
+      <tbody>
+    </table>
+
+    <div style="text-align: center">
+      <%= will_paginate @tasks,
+                        renderer: BootstrapPagination::Rails,
+                        previous_label: "前へ",
+                        next_label: "次へ",
+                        inner_window: 1,
+                        outer_window: 0,
+                        class:"pagination-sm"
+      %>
+    </div>
+  </div>
+</div>

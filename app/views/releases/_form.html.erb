@@ -1,0 +1,28 @@
+<%= form_for(@release, url: choose_new_or_edit) do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @release.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @release.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label "商品名" %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <br>
+  <%= f.label "商品の内容" %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <br>
+  <%= f.label "発売日" %>
+  <div class='input-group date datepicker'>
+    <%= f.text_field :date, class: 'form-control', placeholder: '例：2018/01/01' %>
+  </div>
+  <br>
+  <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to "発売日一覧にもどる", releases_path %>

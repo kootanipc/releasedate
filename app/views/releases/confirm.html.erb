@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h3>以下の商品を登録します。</h3>
+    <%= form_for(@release) do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :content %>
+      <%= f.hidden_field :date %>
+      <p>商品名:<%= @release.name %></p>
+      <p>商品の内容:<%= @release.content %></p>
+      <p>発売日:<%= @release.date %></p>
+      <%= f.submit "登録",class: 'btn btn-primary btn-block' %>
+    <% end %>
+    <%= form_for(@release, url: new_release_path, method: 'get') do |f| %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :content %>
+      <%= f.hidden_field :date %>
+      <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-block' %>
+    <% end %>
+  </div>
+</div>
