@@ -52,6 +52,11 @@ gem 'rails_12factor', group: :production
 #DIVE08 ログイン
 gem 'devise'
 
+#DIVE11 メール送信
+group :development do
+  gem 'letter_opener_web'
+end
+
 #ページングを実装 20180324
 gem 'will_paginate', '= 3.1.6'
 gem 'will_paginate-bootstrap'

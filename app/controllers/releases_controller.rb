@@ -1,6 +1,8 @@
 class ReleasesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @releases = Release
+    @releases = current_user.releases.all
       .paginate(page: params[:page], per_page: 10)
 
     @grid_no = 1
@@ -28,6 +30,7 @@ class ReleasesController < ApplicationController
 
   def create
     @release = Release.new(releases_params)
+    @release.user_id = current_user.id
     if @release.save
       redirect_to releases_path, notice: "商品を登録しました"
     else
