@@ -8,7 +8,7 @@ class NoticeMailer < ApplicationMailer
   def sendmail_releasedate(release)
     @release = release
 
-    mail to: "k-ootani@nttpc.co.jp"
+    mail to: "k-ootani@nttpc.co.jp",
          subject: '商品が登録されました'
   end
 end
