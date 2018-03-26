@@ -11,12 +11,20 @@ module ReleasesHelper
   #発売日を過ぎている場合、"済"を表示する
   def released_flg(release)
     released = ""
-#    today = Time.now
-#    if release.date < today
-#      released = "済"
-#    else
-#      released = "未発売"
-#    end
-#    result.html_safe
+    if release.date < Date.today.months_ago(1)
+      released = '<div class="label label-default">1か月以上前</div>'
+      release.pass = true
+      release.save
+    elsif release.date < Date.today
+      released = '<div class="label label-success">発売済</div>'
+      release.pass = true
+      release.save
+    else
+      released = '<div class="label label-info">未発売</div>'
+      release.pass = false
+      release.save
+    end
+    released.html_safe
   end
+
 end

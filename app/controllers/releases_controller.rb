@@ -2,8 +2,11 @@ class ReleasesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    #ログインユーザの登録商品のみ表示
     @releases = current_user.releases.all
+      .passed(params[:pass])
       .paginate(page: params[:page], per_page: 10)
+      .order('date asc')
 
     @grid_no = 1
     if params[:page].present?

@@ -15,10 +15,10 @@
       </div>
 
       <div class="field">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %>文字以上)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
       </div>
 
       <div class="field">
