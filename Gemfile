@@ -55,6 +55,7 @@ gem 'devise'
 #DIVE11 メール送信
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 #ページングを実装 20180324
@@ -64,3 +65,8 @@ gem 'will_paginate-bootstrap'
 #datepicker用 20180324
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+
+#DIVE14 omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
