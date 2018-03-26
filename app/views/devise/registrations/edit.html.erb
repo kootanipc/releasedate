@@ -14,25 +14,29 @@
         <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
       </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+      <% if @user.provider.blank? %>
 
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
-        <i>(変更しない場合は空白にしてください)</i>
-        <% if @minimum_password_length %>
-          <em><%= @minimum_password_length %>文字以上</em><br>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-      </div>
 
-      <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
-      </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード" %>
+          <i>(変更しない場合は空白にしてください)</i>
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %>文字以上</em><br>
+          <% end %>
+        </div>
 
-      <div class="field">
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "現在のパスワード" %>
-      </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "現在のパスワード" %>
+        </div>
+
+      <% end %>
 
       <div class="actions">
         <%= f.submit "変更する", class: "btn btn-primary btn-block"  %>
@@ -43,7 +47,5 @@
     <h3>アカウント削除</h3>
 
     <p>アカウントを削除するには下のボタンを押してください <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "前の画面に戻る", :back %>
   </div>
 </div>
