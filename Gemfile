@@ -72,4 +72,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 #seedデータのidを初期化
-gem 'activerecord-reset-pk-sequence'
+#gem 'activerecord-reset-pk-sequence'
