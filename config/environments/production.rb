@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # sendgird用の追記
-  config.action_mailer.default_url_options = { host: 'https://fathomless-journey-22402.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://shielded-hollows-80781.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
