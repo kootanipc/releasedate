@@ -70,3 +70,6 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+#seedデータのidを初期化
+gem 'activerecord-reset-pk-sequence'
