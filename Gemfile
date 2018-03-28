@@ -66,10 +66,10 @@ gem 'will_paginate-bootstrap'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
+# 20180329追加
+gem 'jquery-ui-rails'
+
 #DIVE14 omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
-#seedデータのidを初期化
-#gem 'activerecord-reset-pk-sequence'

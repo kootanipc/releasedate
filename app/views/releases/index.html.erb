@@ -2,18 +2,18 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
     <p><%= notice %></p>
     <h1>発売日一覧</h1>
-    <%= link_to "全て表示", releases_path %>
-    <%= link_to "未発売のみ表示", releases_path + "?pass=false" %>
-    <%= link_to "発売済のみ表示", releases_path + "?pass=true" %>
-    <%= link_to "商品を追加", new_release_path, class:"pull-right", class: 'btn btn-default'  %>
+    <%= link_to "全て表示", releases_path, class: 'btn btn-default' %>
+    <%= link_to "未発売のみ表示", releases_path + "?pass=false", class: 'btn btn-info' %>
+    <%= link_to "発売済のみ表示", releases_path + "?pass=true", class: 'btn btn-success' %>
+    <%= link_to "商品を追加", new_release_path, class:"pull-right", class: 'btn btn-default' %>
     <table class="table table-bordered">
       <thead>
       <tr>
-        <th class="grid-th-width1 pc-only">No</th>
-        <th class="grid-th-width2">アイテム</th>
-        <th class="grid-th-width3">発売日</th>
-        <th class="grid-th-width4">発売済フラグ</th>
-        <th class="grid-th-width5">編集</th>
+        <th class="grid-th-width">No</th>
+        <th class="grid-th-width">アイテム</th>
+        <th class="grid-th-width">発売日</th>
+        <th class="grid-th-width">発売済フラグ</th>
+        <th class="grid-th-width">編集</th>
       </tr>
       </thead>
       <tbody>
