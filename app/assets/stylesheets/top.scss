@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+  overflow-x: hidden;
+}
+
 .row {
-  height: 500px;
+  height: 400px;
   background-image: url("CorkBoard02.jpg");
   background-size: contain;
 }
