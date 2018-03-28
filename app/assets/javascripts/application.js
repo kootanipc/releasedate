@@ -11,10 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-ja
+
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
-//= require moment
 //= require bootstrap-datetimepicker
+//= require moment
+//= require turbolinks
 //= require_tree .

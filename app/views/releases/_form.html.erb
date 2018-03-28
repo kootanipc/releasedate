@@ -18,8 +18,14 @@
   <%= f.text_field :content, class: 'form-control' %>
   <br>
   <%= f.label "発売日" %>
-  <div class='input-group date datepicker'>
-    <%= f.text_field :date, class: 'form-control', placeholder: '例：2018/01/01' %>
+  <br>
+  <div class="form-group">
+    <div class="input-group">
+      <%= f.text_field :date, class: 'form-control date-picker' %>
+      <div class='input-group-addon'>
+        <div class="fa fa-calendar"></div>
+      </div>
+    </div>
   </div>
   <br>
   <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
